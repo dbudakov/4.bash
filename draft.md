@@ -1,45 +1,67 @@
-# 4.draft
+### bash  
+Альтернативные оболочки: zsh fish    
+вывод справки: type help man apropos whatis info    
+bash -x   для отладки   
+команды trur/false - вывод 1 или 0   
+echo $? - указывает кол-во ошибок  
+ls -l /dev/std* - потоки  
+echo $TERM  
+alias |grep color 
+tr --help - замена 
+echo "hello \thonny" \t - табуляция
+pipestatus[i] полезно знать 
+while: exit 0 - не кашерный выход?
+IFS - array знак переноса
+awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
+sed '/ *#/d; /^ *$/d'
+egrep "^#|^$"
 
-Оболочки: bash,zsh,fish  
-Справка:  type,help,man,apropos,whatis,info  
 
-#### Hot keys:  
+#### Hot keys:   
 ![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
-#### move and copy/past
+#### move and copy/past   
+```
 Ctrl+a Ctrl+e - home,end  
 Alt+f Alt+b - forward, back  
 Ctrl+w - cut to cursor  
 Ctrl+y - paste  
 Ctrl+u - del string to cursor  
 Ctrl+k - del string after cursor  
-#### function
-Tab или Ctrl+1 - tabulation  
-Ctrl+j - Enter  
-Ctrl+l - clear  
-Ctrl + r - поиск по строке, повторный Ctrl + r - цикличный поиск по истории  
+```
+#### function 
+```
+Tab или Ctrl+1 - tabulation(bash_completion)
+Ctrl+j      - Enter 
+Ctrl+l      - clear  
+Ctrl + r    - поиск по строке, повторный Ctrl + r - цикличный поиск по истории  
 Ctrl + r дважды - поиск по последней поисковой строке  
   Во время поиска:  
-  Ctrl + j - закончить поиск по истории  
-  Ctrl + g - закончить поиск и вернуть строку к прежнему состоянию  
-Crtl + /  
+  Ctrl + j  - закончить поиск по истории  
+  Ctrl + g  - закончить поиск и вернуть строку к прежнему состоянию  
+Crtl + /    - сигнал выхода (SIGQUIT) 
 Сtrl + e  
-
+```
 
 #### Перенаправления
-1 [file]<< EOF / EOF    
-2 cat << EOF > myscript.sh  
-3 read first second <<< "hello world"   
+```
+[file]<< EOF / EOF    
+cat << EOF > myscript.sh  
+read first second <<< "hello world"   
+```
 ### Scripts
 #### варианты запуска  
-1 ./script.sh (необходим chmod +x)  
-2 bash script.sh  
-3 source script.sh  
+```
+./script.sh (необходим chmod +x)  
+bash script.sh  
+source script.sh  
+```
 ### Переменные  
-1 env  
-2 printenv  
-3 export  
-4 declare  
+```
+Для работы с переменными: env printenv export declare 
+записaть в /home/user/.bash_profile, экспортных переменных
+```
 ##### Специальные переменные:
+```
  $@ — параметры скрипта (столбик)  
  $* - все параметры скрипта (строка)  
  $0 — имя скрипта  
@@ -47,13 +69,16 @@ Crtl + /
  $? — статус выхода последней вýполненной командý  
  $$ — PID оболочки  
  $! — PID последней вýполненной в фоновом режиме командý  
+```
 ##### примеры:  
+```
 export var=value  
 declare var=value  
 var=$(expr 3 + 7)  
 var1="${var1:-default value}"  
-
+```
 ### Arrays  
+```
 files = $(ls) - считýваетсā строка  
 array=('first element' 'second element' 'third element')  
 array=([3]='fourth element' [4]='fifth element')  
@@ -65,7 +90,7 @@ declare -A array
 array[first]='First element'  
 array[second]='Second element'  
 array =(0 1 2)  
-
+```
 ### Управляющие структуры
 ####  Условные операторы
 ##### Оператор варианта case синтаксис:  
@@ -128,7 +153,8 @@ done;`
 
 [Колисниченко, Аллен: Linux полное руководство](https://proweb.md/ftp/carti/%D0%9A%D0%BE%D0%BB%D0%B8%D1%81%D0%BD%D0%B8%D1%87%D0%B5%D0%BD%D0%BA%D0%BE%20%D0%94%D0%9D%20%20%D0%90%D0%BB%D0%BB%D0%B5%D0%BD%20%D0%9F%D0%B8%D1%82%D0%B5%D1%80%20%D0%92%20Linux%20%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5%20%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE.pdf) Глава 8.  
 
-### Регулярные выражения  
+### Регулярные выражения 
+  https://regex101.com/
 ```  
 ^([a-zA-Z0-9_\-\.\+]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$  
   
@@ -174,75 +200,3 @@ bash$ ls -l [a-c]*
 bash$ ls -l [^ab]*  
 bash$ ls -l {b*,c*,*est*}  
 bash$ echo {1..5}{0,5}%  
-
-
-
-
-
-
-
-
-
-
-скрипт киди
-mandb - update db
-сочетание клавиш
-  
-  bash-completion
-  ctrl /
-
-/ - в конце строки дополнение строки
-&& - выполнить первую команду И выпонить вторую команду
-|| - выполнить первую команду ИЛИ вторую
-
-команды trur/false - вывод 1 или 0
-echo $? - указывает кол-во ошибок
-
-google > bash error code
-
-ls -l /dev/std* - потоки
-
-echo $TERM
- alias |grep color 
- 
-mkfifo
-
-<<EOF - end of file
-
-
-bash /script
-bash -x   для отладки
-ещё pipestatus[i] полезно знать 
-
-evn - много инфы, переменные
-printenv
-записть в .bash_profile, экспортных переменных
-
-IFS - array знак переноса
-
-https://devhints.io/bash#conditionals - шпора
-
-while: exit 0 - не кашерный выход?
-## ДЗ
-while [ -f $pid_file ]
-    do
-      echo "Идет фоновой процесс ждем 300 секунд"
-      sleep 300
-  done
-  вот защита от повторного запуска
-  ### lock file во временное хранилище - tmp,var
-  
-   https://regex101.com/
-  
-  awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
-  sed '/ *#/d; /^ *$/d'
-  egrep "^#|^$"
-  
- классы
- 
-tr --help - замена 
-echo "hello \thonny" \t - табуляция 
-awk -F":" -f ./test.awk /etc/passwd
-
-sed - steam editior, замена данных на ходу
-secoban на sed - игра  http://sed.sourceforge.net/local/games/sokoban.sed.html
