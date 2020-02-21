@@ -1,4 +1,5 @@
 ### bash  
+```
 Альтернативные оболочки: zsh fish    
 вывод справки: type help man apropos whatis info    
 bash -x   для отладки   
@@ -15,7 +16,7 @@ IFS - array знак переноса
 awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
 sed '/ *#/d; /^ *$/d'
 egrep "^#|^$"
-
+```
 
 #### Hot keys:   
 ![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
