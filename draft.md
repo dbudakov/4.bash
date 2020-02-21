@@ -15,6 +15,9 @@
 `awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg`    
 `sed '/ *#/d; /^ *$/d'`    
 `egrep "^#|^$"`   
+`rm -rf *    # может не заработать,если 999999 файлов, переполниться стек   
+find ./ -name "log*" -delete  # а это нормально работает`  
+
 
 ### Hot keys:   
 ![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
