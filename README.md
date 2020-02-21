@@ -7,5 +7,5 @@ while [ -f $pid_file ]
   вот защита от повторного запуска
   ### lock file во временное хранилище - tmp,var
   
- 
-  
+[if in for](https://gitlab.com/otus_linux/stands-05-bash/-/blob/master/loop5.sh)   
+[do in while](https://gitlab.com/otus_linux/stands-05-bash/-/blob/master/loop6.sh)   
