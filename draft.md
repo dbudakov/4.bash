@@ -5,7 +5,7 @@
 
 #### Hot keys:  
 ![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
-#### move
+#### move and copy/past
 Ctrl+a Ctrl+e - home,end  
 Alt+f Alt+b - forward, back  
 Ctrl+w - cut to cursor  
@@ -16,14 +16,13 @@ Ctrl+k - del string after cursor
 Tab или Ctrl+1 - tabulation  
 Ctrl+j - Enter  
 Ctrl+l - clear  
-Ctrl + r - поиск по строке, повторный Ctrl + r - цикличнýй поиск по истории
-Ctrl + r дважды - поиск по последней поисковой строке
-  Во времā поиска:
-  Ctrl + j - закончить поиск по истории
-  Ctrl + g - закончить поиск и вернуть строку к прежнему состоянию
-
-Crtl + /
-Сtrl + e
+Ctrl + r - поиск по строке, повторный Ctrl + r - цикличный поиск по истории  
+Ctrl + r дважды - поиск по последней поисковой строке  
+  Во время поиска:  
+  Ctrl + j - закончить поиск по истории  
+  Ctrl + g - закончить поиск и вернуть строку к прежнему состоянию  
+Crtl + /  
+Сtrl + e  
 
 
 
