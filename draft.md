@@ -12,7 +12,6 @@
 `echo "hello \thonny" \t` - табуляция  
 `pipestatus[i]` полезно знать   
 `while: exit 0` - не кашерный выход?  
-
 `awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg`    
 `sed '/ *#/d; /^ *$/d'`    
 `egrep "^#|^$"`   
