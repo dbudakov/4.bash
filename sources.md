@@ -13,3 +13,6 @@
 2.5 [SubShell](https://mywiki.wooledge.org/SubShell)  
 2.6 [FISH](https://github.com/oh-my-fish/oh-my-fish)  
 2.7 [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
+
+#### other  
+3.1 [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
