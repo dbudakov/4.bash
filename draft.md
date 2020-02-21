@@ -1,27 +1,32 @@
 # 4.draft
 
-Оболочки: bash,zsh,fish 
-Справка:  type,help,man,apropos,whatis,info
+Оболочки: bash,zsh,fish  
+Справка:  type,help,man,apropos,whatis,info  
 
-
-![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)
-Hot keys:  
-Tab или Ctrl+1 - tabulation  
+#### Hot keys:  
+![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
+#### move
 Ctrl+a Ctrl+e - home,end  
 Alt+f Alt+b - forward, back  
-Ctrl+j - Enter  
-Ctrl+l - clear  
 Ctrl+w - cut to cursor  
 Ctrl+y - paste  
 Ctrl+u - del string to cursor  
-Ctrl+k - del string after cursor
+Ctrl+k - del string after cursor  
+#### function
+Tab или Ctrl+1 - tabulation  
+Ctrl+j - Enter  
+Ctrl+l - clear  
 Ctrl + r - поиск по строке, повторный Ctrl + r - цикличнýй поиск по истории
 Ctrl + r дважды - поиск по последней поисковой строке
   Во времā поиска:
   Ctrl + j - закончить поиск по истории
   Ctrl + g - закончить поиск и вернуть строку к прежнему состоянию
+
 Crtl + /
 Сtrl + e
+
+
+
 
 
 
