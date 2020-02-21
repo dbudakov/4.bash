@@ -1,18 +1,29 @@
 # 4.draft
 
 Оболочки: bash,zsh,fish 
+Справка:  type,help,man,apropos,whatis,info
+
+Hot keys:  
+Tab или Ctrl+1 - tabulation  
+Ctrl+a Ctrl+e - home,end  
+Alt+f Alt+b - forward, back  
+Ctrl+j - Enter  
+Ctrl+l - clear  
+Ctrl+w - cut to cursor  
+Ctrl+y - paste  
+Ctrl+u - del string to cursor  
+Ctrl+k - del string after cursor
+Crtl + /
+ctrl + e
+
+
+
+
 
 скрипт киди
 mandb - update db
 сочетание клавиш
-  shift+ins
-  ctrl+К
-  crtl+u, home
-  ctrl + r , ctrl + w, crtl + /
-  crtl+К
-  ctrl + e
-  tab, ctr+a, 
-  Ctrl + left\right
+  
   bash-completion
   ctrl /
 
