@@ -10,3 +10,4 @@ while [ -f $pid_file ]
 [if in for](https://gitlab.com/otus_linux/stands-05-bash/-/blob/master/loop5.sh)    
 [do in while](https://gitlab.com/otus_linux/stands-05-bash/-/blob/master/loop6.sh)   
 [expect ?](https://gitlab.com/otus_linux/stands-05-bash/-/blob/master/script.exp)  
+[trap](https://gitlab.com/otus_linux/stands-05-bash/-/blob/master/trap.sh)  
