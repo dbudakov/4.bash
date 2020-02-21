@@ -21,25 +21,25 @@ egrep "^#|^$"
 ![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
 #### move and copy/past   
 ```
-Ctrl+a Ctrl+e - home,end  
+^a ^e - home,end  
 Alt+f Alt+b - forward, back  
-Ctrl+w - cut to cursor  
-Ctrl+y - paste  
-Ctrl+u - del string to cursor  
-Ctrl+k - del string after cursor  
+^w - cut to cursor  
+^y - paste  
+^u - del string to cursor  
+^k - del string after cursor  
 ```
 #### function 
 ```
 Tab или Ctrl+1 - tabulation(bash_completion)
-Ctrl+j      - Enter 
-Ctrl+l      - clear  
-Ctrl + r    - поиск по строке, повторный Ctrl + r - цикличный поиск по истории  
-Ctrl + r дважды - поиск по последней поисковой строке  
+^j      - Enter 
+^l      - clear  
+^r    - поиск по строке, повторный Ctrl + r - цикличный поиск по истории  
+^r дважды - поиск по последней поисковой строке  
   Во время поиска:  
-  Ctrl + j  - закончить поиск по истории  
-  Ctrl + g  - закончить поиск и вернуть строку к прежнему состоянию  
-Crtl + /    - сигнал выхода (SIGQUIT) 
-Сtrl + e  
+  ^j  - закончить поиск по истории  
+  ^g  - закончить поиск и вернуть строку к прежнему состоянию 
+^/    - сигнал выхода (SIGQUIT) 
+^e  
 ```
 
 #### Перенаправления
