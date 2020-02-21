@@ -2,7 +2,8 @@
 Альтернативные оболочки: `zsh fish`    
 вывод справки: `type help man apropos whatis info`    
 `bash -x`   для отладки   
-команды `trur/false` - вывод 1 или 0   
+команды `trur/false` - вывод 1 или 0  
+\ IFS - array знак переноса  
 `echo $?` - указывает кол-во ошибок  
 `ls -l /dev/std*` - потоки  
 `echo $TERM`  
@@ -11,7 +12,7 @@
 `echo "hello \thonny" \t` - табуляция  
 `pipestatus[i]` полезно знать   
 `while: exit 0` - не кашерный выход?  
-IFS - array знак переноса  
+
 `awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg`    
 `sed '/ *#/d; /^ *$/d'`    
 `egrep "^#|^$"`   
