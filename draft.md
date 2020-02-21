@@ -6,15 +6,15 @@
 `echo $?` - указывает кол-во ошибок  
 `ls -l /dev/std*` - потоки  
 `echo $TERM`  
-`alias |grep color` 
-`tr --help` - замена 
-`echo "hello \thonny" \t` - табуляция
-`pipestatus[i]` полезно знать 
-`while: exit 0` - не кашерный выход?
-IFS - array знак переноса
-`awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg`  
-`sed '/ *#/d; /^ *$/d'`  
-`egrep "^#|^$"`  
+`alias |grep color`  
+`tr --help` - замена   
+`echo "hello \thonny" \t` - табуляция  
+`pipestatus[i]` полезно знать   
+`while: exit 0` - не кашерный выход?  
+IFS - array знак переноса  
+`awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg`    
+`sed '/ *#/d; /^ *$/d'`    
+`egrep "^#|^$"`   
 
 ### Hot keys:   
 ![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
