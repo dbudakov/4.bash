@@ -3,7 +3,7 @@
 вывод справки: `type help man apropos whatis info`    
 `bash -x`   для отладки   
 команды `trur/false` - вывод 1 или 0  
-\ IFS - array знак переноса  
+\IFS - array знак переноса  
 `echo $?` - указывает кол-во ошибок  
 `ls -l /dev/std*` - потоки  
 `echo $TERM`  
