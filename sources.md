@@ -10,4 +10,5 @@
 2.3 [Learning Linux Commands: sed](https://linuxconfig.org/learning-linux-commands-sed)  
 2.4 [Linux man pages](https://linux.die.net/man/)  
 2.5 [SubShell](https://mywiki.wooledge.org/SubShell)  
-
+2.6 [FISH](https://github.com/oh-my-fish/oh-my-fish)  
+2.7 [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
