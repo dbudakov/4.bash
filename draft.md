@@ -1,7 +1,7 @@
 ### bash  
 Альтернативные оболочки: `zsh` `fish`    
-вывод справки: `type` `help` `man` `apropos` `whatis` `info`    
-bash -x   для отладки   
+вывод справки: `type help man apropos whatis info`    
+`bash -x`   для отладки   
 команды trur/false - вывод 1 или 0   
 echo $? - указывает кол-во ошибок  
 ls -l /dev/std* - потоки  
