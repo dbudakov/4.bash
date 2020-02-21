@@ -25,7 +25,33 @@ Crtl + /
 Сtrl + e  
 
 
-
+#### Перенаправления
+1 [file]<< EOF / EOF    
+2 cat << EOF > myscript.sh  
+3 read first second <<< "hello world"   
+### Scripts
+#### варианты запуска  
+1 ./script.sh (необходим chmod +x)  
+2 bash script.sh  
+3 source script.sh  
+### Переменные  
+1 env  
+2 printenv  
+3 export  
+4 declare  
+##### Специальные переменные:
+ $@ — параметры скрипта (столбик)  
+ $* - все параметры скрипта (строка)  
+ $0 — имя скрипта  
+ $# — количество параметров  
+ $? — статус выхода последней вýполненной командý  
+ $$ — PID оболочки  
+ $! — PID последней вýполненной в фоновом режиме командý  
+##### примеры:  
+export var=value  
+declare var=value  
+var=$(expr 3 + 7)  
+var1="${var1:-default value}"  
 
 
 
