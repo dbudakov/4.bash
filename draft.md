@@ -1,7 +1,6 @@
 ### bash  
-```
-Альтернативные оболочки: zsh fish    
-вывод справки: type help man apropos whatis info    
+Альтернативные оболочки: `zsh` `fish`    
+вывод справки: `type` `help` `man` `apropos` `whatis` `info`    
 bash -x   для отладки   
 команды trur/false - вывод 1 или 0   
 echo $? - указывает кол-во ошибок  
@@ -16,9 +15,8 @@ IFS - array знак переноса
 awk -F\' '$1=="menuentry " {print $2}' /etc/grub2.cfg
 sed '/ *#/d; /^ *$/d'
 egrep "^#|^$"
-```
 
-#### Hot keys:   
+### Hot keys:   
 ![alt-текст](https://github.com/dbudakov/4.bash/blob/master/image/moving_bash.png)  
 #### move and copy/past   
 ```
