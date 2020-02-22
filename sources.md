@@ -20,7 +20,7 @@
 Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com),   
 "UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)  
 или учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)  
- 
+2.10 Регулярные выражения : "Mastering Regular Expressions" by Jeffrey Friedl (O'Reilly, 1997).  
 
 #### other  
 3.1 [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
