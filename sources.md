@@ -5,7 +5,7 @@
 1.4 [Карманный справочник](https://slack-files.com/files-pri-safe/T73A2HU1L-FTEKZQ882/bash_____________________________________________________________.pdf?c=1582268809-f7a8d24379df527139424f9186e778ea4758fa9a)  
 1.5 [bash presentation.otus](https://otus.ru/media-private/bb/be/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_Bash-5373-bbbe25.pdf?hash=ElEps9phUnYcI2rTFQ5SIA&expires=1582295049)  
 1.6 [bash example.otus](https://gitlab.com/otus_linux/stands-05-bash)  
-1.7 [sed example](http://www.lissyara.su/doc/programming/sed/)  
+1.7 [sed example_1](http://www.lissyara.su/doc/programming/sed/), [example_2](http://ant0.ru/sed1line.html)
 
 #### advanced
 2.1 [Advanced Bash-Scripting Guide](https://www.opennet.ru/docs/RUS/bash_scripting_guide/)  
