@@ -5,7 +5,7 @@
 yum install mailx wget -y 
 ```
 для отправки через сторонний smtp сервис нужно установить сертификат, этого ресурса  
-проверяем установленный  
+проверяем установленный, решение найдено из [источника](https://unix.stackexchange.com/questions/445252/how-to-send-mails-using-smtp-server-in-linux-without-error)
 ```shell
 certutil -L -d /etc/pki/nssdb  
 # здесь -L посмотреть список сертификатов  
