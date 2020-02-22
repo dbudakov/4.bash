@@ -1,5 +1,5 @@
 ### Настройка отправки сообщений
-[script]()
+[script](https://github.com/dbudakov/4.bash/blob/master/mail.md#script)  
 Перваначально в Vagrantfile предустановлены mailx и wget, они понадобятся  
 ```shell
 yum install mailx wget -y 
