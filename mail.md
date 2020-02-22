@@ -43,9 +43,7 @@ certutil -L -d /etc/pki/nssdb
 ```
 Далее, можно отправлять сообщения, [example](https://www.dmosk.ru/miniinstruktions.php?mini=mail-shell)  
 ```shell
-df -h | mail -v -s "Test" -S smtp="smtp.mail.ru:587" -S smtp-use-starttls -S smtp-auth=login \  
--S smtp-auth-user="bash_test@mail.ru" -S smtp-auth-password="gcy2yRVFV5" -S ssl-verify-ignore \  
--S nss-config-dir=/etc/pki/nssdb -S from=bash_test@mail.ru budakov.web@gmail.com  
+df -h | mail -v -s "Test" -S smtp="smtp.mail.ru:587" -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="bash_test@mail.ru" -S smtp-auth-password="gcy2yRVFV5" -S ssl-verify-ignore -S nss-config-dir=/etc/pki/nssdb -S from=bash_test@mail.ru budakov.web@gmail.com  
 # Здесь smtp="smtp.mail.ru":587 - сервер smtp:порт  
 #       smtp-use-starttls       - указывает на использование шифрования TLS  
 #       smtp-auth=login         - задает аутентификацию с использованием логина пароля  
