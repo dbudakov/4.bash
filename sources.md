@@ -19,7 +19,7 @@
 2.9 Регулярные выражения : "Mastering Regular Expressions" by Jeffrey Friedl (O'Reilly, 1997).  
 
 #### SED
-dev begginer:  
+sed begginer:  
 1.7  [sed example_1](http://www.lissyara.su/doc/programming/sed/)  
 1.2  [sed example_2](http://ant0.ru/sed1line.html)  
 sed advance:  
