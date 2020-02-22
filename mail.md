@@ -1,5 +1,5 @@
 Перваначально в Vagrantfile предустановлены mailx и wget, они понадобятся  
-```
+```shell
 yum install mailx wget  
 ```
 для отправки через сторонний smtp сервис нужно установить сертификат, этого ресурса  
@@ -9,7 +9,7 @@ certutil -L -d /etc/pki/nssdb
 # здесь -L посмотреть список сертификатов  
 ```  
 смотрим отрытый сертификат smtp сервера  
-```  
+```shell
 openssl s_client -showcerts -connect smtp.mail.ru:465 </dev/null|less  
 ```  
 здесь основные поля в которых указан нужный сертификат и сервер сертификата это    
@@ -25,11 +25,11 @@ subject=/C=RU/L=Moscow/O=LLC Mail.Ru/OU=IT/CN=*.mail.ru
 issuer=/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=GeoTrust RSA CA 2018  
 ```  
 качаем требуемый сертификат  
-```
+```shell
 wget https://dl.cacerts.digicert.com/GeoTrustRSACA2018.crt    
 ```
 и устанавливаем его для в нашу систему  
-```
+```shell
 certutil -A -d /etc/pki/nssdb -t "TCu,Cu,Tuw" -i ./GeoTrustRSACA2018.crt -n GeoTrustRSACA2018.crt    
 #  здесь -A -добавить сертификат  
 #        -d -директория сертификатов  
@@ -38,7 +38,7 @@ certutil -A -d /etc/pki/nssdb -t "TCu,Cu,Tuw" -i ./GeoTrustRSACA2018.crt -n GeoT
 #        -n наименование, будет отображаться в списке сертификитов  
 ```
 Проверяем наличие сертификата  
-```
+```shell
 certutil -L -d /etc/pki/nssdb  
 ```
 Далее, можно отправлять сообщения, [example](https://www.dmosk.ru/miniinstruktions.php?mini=mail-shell)  
