@@ -1,3 +1,5 @@
+### Настройка отправки сообщений
+[script]()
 Перваначально в Vagrantfile предустановлены mailx и wget, они понадобятся  
 ```shell
 yum install mailx wget -y 
