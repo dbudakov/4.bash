@@ -1,6 +1,6 @@
 Перваначально в Vagrantfile предустановлены mailx и wget, они понадобятся  
 ```shell
-yum install mailx wget  
+yum install mailx wget -y 
 ```
 для отправки через сторонний smtp сервис нужно установить сертификат, этого ресурса  
 проверяем установленный  
@@ -53,4 +53,15 @@ df -h | mail -v -s "Test" -S smtp="smtp.mail.ru:587" -S smtp-use-starttls -S smt
 #       nss-config-dir=/etc/pki/nssdb - указывает на каталог с базами nss  
 #       from=[from@mail.ru]     - задает поле FROM  
 #       [to_mail]@gmail.com     - получатель  
-```  
+```
+##### script
+```
+#!/bin/bash
+yum install mailx wget -y
+# certutil -L -d /etc/pki/nssdb
+# openssl s_client -showcerts -connect smtp.mail.ru:465 </dev/null|less
+wget https://dl.cacerts.digicert.com/GeoTrustRSACA2018.crt
+certutil -A -d /etc/pki/nssdb -t "TCu,Cu,Tuw" -i ./GeoTrustRSACA2018.crt -n GeoTrustRSACA2018.crt
+# certutil -L -d /etc/pki/nssdb
+# df -h | mail -v -s "Test" -S smtp="smtp.mail.ru:587" -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="bash_test@mail.ru" -S smtp-auth-password="gcy2yRVFV5" -S ssl-verify-ignore -S nss-config-dir=/etc/pki/nssdb -S from=bash_test@mail.ru budakov.web@gmail.com
+```
