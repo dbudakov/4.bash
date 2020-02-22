@@ -16,6 +16,11 @@
 2.6 [FISH](https://github.com/oh-my-fish/oh-my-fish)  
 2.7 [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
 2.8 [stty](https://linux.die.net/man/1/stty)  
+2.9 sed and awk:  
+Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com),   
+"UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)  
+или учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)  
+ 
 
 #### other  
 3.1 [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
