@@ -8,15 +8,16 @@
 1.7 [sed example_1](http://www.lissyara.su/doc/programming/sed/), [example_2](http://ant0.ru/sed1line.html)
 
 #### advanced
-2.1 [Advanced Bash-Scripting Guide](https://www.opennet.ru/docs/RUS/bash_scripting_guide/)  
-2.2 [Язык обработки данных AWK](https://www.opennet.ru/docs/RUS/awk/)  
-2.3 [Learning Linux Commands: sed](https://linuxconfig.org/learning-linux-commands-sed)  
-2.4 [Linux man pages](https://linux.die.net/man/)  
-2.5 [SubShell](https://mywiki.wooledge.org/SubShell)  
-2.6 [FISH](https://github.com/oh-my-fish/oh-my-fish)  
-2.7 [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
-2.8 [stty](https://linux.die.net/man/1/stty)  
-2.9 sed and awk:  
+2.1  [Advanced Bash-Scripting Guide](https://www.opennet.ru/docs/RUS/bash_scripting_guide/)  
+2.2  [Язык обработки данных AWK](https://www.opennet.ru/docs/RUS/awk/)  
+2.3  [Learning Linux Commands: sed](https://linuxconfig.org/learning-linux-commands-sed)  
+2.4  [Linux man pages](https://linux.die.net/man/)  
+2.5  [SubShell](https://mywiki.wooledge.org/SubShell)  
+2.6  [FISH](https://github.com/oh-my-fish/oh-my-fish)  
+2.7  [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
+2.8  [stty](https://linux.die.net/man/1/stty)  
+2.9  [seb edit interfaces](http://ant0.ru/sed_edit_interfaces.html)  
+2.10 sed and awk:  
 Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com),   
 "UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)  
 или учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)  
