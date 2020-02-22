@@ -35,6 +35,8 @@ while [ -f $pid_file ]
 [trap](https://gitlab.com/otus_linux/stands-05-bash/-/blob/master/trap.sh)  
 declare
 
-
+[source](http://ant0.ru/sed1line.html)  
+Удалить большинство HTML тегов (включая теги состоящие из несколько строк)  
+Печатать часть файла между двумя регулярными выражениями (включительно)  
 
 
