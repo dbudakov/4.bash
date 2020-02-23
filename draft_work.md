@@ -37,6 +37,7 @@ awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|uniq -c|sort -nr|awk '{pr
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk -F\" '/https/ {print $4}'|uniq -c|sort -nr|column -t
 ```  
+коды возврата  
 ```
 awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk  '{print  $9}'>test
 ```
