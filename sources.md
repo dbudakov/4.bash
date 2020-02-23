@@ -32,5 +32,7 @@ sed advance:
 Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com)     
 "UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)   
 или учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)  
+#### AWK  
+1. [awk habr](https://habr.com/ru/company/ruvds/blog/327754/)  
 #### other  
 3.1 [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
