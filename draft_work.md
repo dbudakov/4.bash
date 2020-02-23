@@ -31,3 +31,10 @@ t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 echo -e "access.log file\n$(date +%d\ %b\ %G) $(date --date '-60 min' +%H\:00) - $(date +%H\:00)\nRequests:\tAdress:"
 awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|uniq -c|sort -nr|awk '{print "\t"$1"\t"$2}'
 ```
+скрипт выбора запрашиваемых адресов  
+```
+#!/bin/bash
+t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
+echo -e "access.log file\n$(date +%d\ %b\ %G) $(date --date '-60 min' +%H\:00) - $(date +%H\:00)\n"
+awk -v t=$t -v i=$i '/'$t'/ {print $0}' access.log 2>/dev/null |awk -F\" '/HTTP/{print $4}'|uniq -c|sort -nr|column -t
+```
