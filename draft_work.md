@@ -20,6 +20,6 @@ date MMDDhhmmYYYY
 
 рабочие наброски  
 ```
-t=$(date +%d\/%b\/%G:$(date --date '-60 min' +%H))
+t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 awk -v t=$t '/t/ {print $1}'
 ```
