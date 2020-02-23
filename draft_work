@@ -6,6 +6,11 @@ while [ 1 -eq 1  ];do echo -n "введите столбец: "; read yesno ;  a
 ```
 выборка по дате:  
 ```   
-date +%d/%b/%G:$(( $(date +%H)-1 ))  
-awk '/15\/Aug\/2019:00/ {print $1}'  
+date +%d\\/%b\\/%G:$(( $(date +%H)-1 ))
+
+awk '/15\/Aug\/2019:00/ {print $1}'
+```
+рабочие наброски  
+t=$(date +%d\\/%b\\/%G:$(( $(date +%H)-1 )))
+awk -v t=$t '/t/ {print $1}'
 ```
