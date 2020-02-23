@@ -1,0 +1,6 @@
+
+скрипт для выборки AWK из file
+```
+#echo -n "укажите путь к файлу: "; read file ;
+while [ 1 -eq 1  ];do echo -n "введите столбец: "; read yesno ;  awk -v i="$yesno" '{print $i}' $file |head -10 ;done ;  
+```
