@@ -4,3 +4,7 @@
 #echo -n "укажите путь к файлу: "; read file ;
 while [ 1 -eq 1  ];do echo -n "введите столбец: "; read yesno ;  awk -v i="$yesno" '{print $i}' $file |head -10 ;done ;  
 ```
+выборка по дате:  
+```   
+date +%d/%b/%G:$(( $(date +%H)-1 ))
+```
