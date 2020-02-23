@@ -29,15 +29,15 @@ script выбора кол-ва IP за последний час
 #!/bin/bash
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 echo -e "access.log file\n$(date +%d\ %b\ %G) $(date --date '-60 min' +%H\:00) - $(date +%H\:00)\nRequests:\tAdress:"
-awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|uniq -c|sort -nr|awk '{print "\t"$1"\t"$2}'
+awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|sort|uniq -c|sort -nr|awk '{print "\t"$1"\t"$2}'
 ```
 скрипт выбора запрашиваемых адресов  
 ```shell  
 #!/bin/bash
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
-awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk -F\" '/https/ {print $4}'|uniq -c|sort -nr|column -t
+awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk -F\" '/https/ {print $4}'|sort|uniq -c|sort -nr|column -t
 ```  
 коды возврата  
 ```
-awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk  '{print  $9}'>test
+awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk  '{print  $9}'|sort|uniq -c
 ```
