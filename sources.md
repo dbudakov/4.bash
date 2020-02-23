@@ -33,6 +33,7 @@ Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http
 "UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)   
 или учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)  
 #### AWK  
-1. [awk habr](https://habr.com/ru/company/ruvds/blog/327754/)  
+1. [awk habr](https://habr.com/ru/company/ruvds/blog/327754/) 
+2. [awk manual](https://www.gnu.org/software/gawk/manual/html_node/index.html)  
 #### other  
 3.1 [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
