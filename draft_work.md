@@ -24,3 +24,10 @@ t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 #awk -v t=$t '/t/ {print $1}'
 awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|uniq -c|sort -gr
 ```
+script выбора кол-ва IP за последний час  
+```shell
+#!/bin/bash
+t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
+echo -e "access.log file\n$(date +%d\ %b\ %G) $(date --date '-60 min' +%H\:00) - $(date +%H\:00)\nRequests:\tAdress:"
+awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|uniq -c|sort -nr|awk '{print "\t"$1"\t"$2}'
+```
