@@ -19,7 +19,8 @@ date MMDDhhmmYYYY
 
 
 рабочие наброски  
-```
+```shell
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
-awk -v t=$t '/t/ {print $1}'
+#awk -v t=$t '/t/ {print $1}'
+awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|uniq -c|sort -gr
 ```
