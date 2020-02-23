@@ -19,6 +19,7 @@ date MMDDhhmmYYYY
 
 
 рабочие наброски  
+```
 t=$(date +%d\\/%b\\/%G:$(( $(date +%H)-1 )))
 awk -v t=$t '/t/ {print $1}'
 ```
