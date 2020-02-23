@@ -41,3 +41,9 @@ awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk -F\" '/https/ {print
 ```
 awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk  '{print  $9}'|sort|uniq -c
 ```
+
+выборка ошибок за 1 час
+```
+awk -v t=$t '/'$t'/ {print $9}' access.log 2>/dev/null|egrep '^4|^5
+```
+
