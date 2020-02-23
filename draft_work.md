@@ -36,5 +36,5 @@ awk -v t=$t '/'$t'/ {print $1}' access.log 2>/dev/null|uniq -c|sort -nr|awk '{pr
 #!/bin/bash
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 echo -e "access.log file\n$(date +%d\ %b\ %G) $(date --date '-60 min' +%H\:00) - $(date +%H\:00)\n"
-awk -v t=$t -v i=$i '/'$t'/ {print $0}' access.log 2>/dev/null |awk -F\" '/HTTP/{print $4}'|uniq -c|sort -nr|column -t
-```
+awk -v t=$t -v i=$i '/'$t'/ {print $0}' access.log 2>/dev/null |awk -F\" '/https/{print $4}'|uniq -c|sort -nr|column -t
+```  
