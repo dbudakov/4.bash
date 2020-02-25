@@ -35,5 +35,6 @@ Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http
 #### AWK  
 1. [awk habr](https://habr.com/ru/company/ruvds/blog/327754/) 
 2. [awk manual](https://www.gnu.org/software/gawk/manual/html_node/index.html)  
+3. [Awk в примерах](https://www.ibm.com/developerworks/ru/library/l-awk1/index.html)  
 #### other  
 3.1 [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
