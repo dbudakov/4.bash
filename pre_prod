@@ -1,0 +1,49 @@
+#!/bin/bash
+trap post 1 2 3 6
+
+t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
+date0=$(date +%d\ %b\ %G)
+date1=$(date --date '-60 min' +%H\:00)
+date2=$(date +%H\:00)
+
+file=access.log
+	
+ 	ip_select() {
+		awk -v t=$t '/'$t'/ {print $1}' $file 2>/dev/null|
+		sort|uniq -c|
+		sort -nr
+	}
+	adr() {
+		ip_select|
+		awk 'BEGIN{print "Requests:\tAdress:"" }{print "\t"$1"\t"$2}'
+	}
+
+	trg() {
+		awk -v t=$t '/'$t'/ {print $0}' $file 2>/dev/null|
+		awk -F\" '/https/ BEGIN{print "Requests:\ttarget_addresses"}{print $4}'|
+		sort|uniq -c|
+		sort -nr|
+		column -t
+	}
+
+	rtn(){
+		awk -v t=$t '/'$t'/ {print $0}' $file 2>/dev/null|
+		awk  'BEGIN{print "return code:"}{print  $9}'|
+		sort|uniq -c|
+		sort -nr
+	}
+	err() {
+	awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null|
+	egrep '^4|^5
+	}
+
+	post(){
+	echo -e "$file\n$date0 $date1 - $date2"
+	echo -e "$(adr)\n$(trg)\n$(rtn)\n$(err)"
+	}
+mail() {
+	mail -v -s "Test" -S smtp="smtp.mail.ru:587" -S smtp-use-starttls -S smtp-auth=login\ 
+	-S smtp-auth-user="bash_test@mail.ru" -S smtp-auth-password="***" \
+	-S ssl-verify-ignore -S nss-config-dir=/etc/pki/nssdb -S \
+	from=bash_test@mail.ru budakov.web@gmail.com
+}<post
