@@ -1,12 +1,15 @@
 #!/bin/bash
 trap mail 1 2 3 6
 
+#time
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 date0=$(date +%d\ %b\ %G)
 date1=$(date --date '-60 min' +%H\:00)
 date2=$(date +%H\:00)
+#file
 temp=temp_file
 file=access.log
+#mail
 mailto=budakov.web@gmail.com
 mailfrom=bash_test@mail.ru
 pass_mailfrom=
