@@ -5,6 +5,7 @@ t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 date0=$(date +%d\ %b\ %G)
 date1=$(date --date '-60 min' +%H\:00)
 date2=$(date +%H\:00)
+temp=temp_file
 
 file=access.log
 	
@@ -49,4 +50,13 @@ mail() {
 	-S ssl-verify-ignore -S nss-config-dir=/etc/pki/nssdb -S \
 	from=bash_test@mail.ru budakov.web@gmail.com
 }<post
-mail
+
+
+main() {
+	if
+	[ -e $temp ]
+	then echo "script running"
+	else touch $temp && mail && rm $temp
+	fi
+	}
+main
