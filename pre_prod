@@ -6,8 +6,13 @@ date0=$(date +%d\ %b\ %G)
 date1=$(date --date '-60 min' +%H\:00)
 date2=$(date +%H\:00)
 temp=temp_file
-
 file=access.log
+mailto=budakov.web@gmail.com
+mailfrom=bash_test@mail.ru
+pass_mailfrom=
+smtp_serv=smtp.mail.ru:587
+
+
 	
  	ip_select() {
 		awk -v t=$t '/'$t'/ {print $1}' $file 2>/dev/null|
@@ -45,10 +50,10 @@ file=access.log
 	echo -e "$(adr)\n$(trg)\n$(rtn)\n$(err)"
 	}
 mail() {
-	mail -v -s "Test" -S smtp="smtp.mail.ru:587" -S smtp-use-starttls -S smtp-auth=login\ 
-	-S smtp-auth-user="bash_test@mail.ru" -S smtp-auth-password="***" \
+	mail -v -s "Test" -S smtp="$smtp_serv" -S smtp-use-starttls -S smtp-auth=login\ 
+	-S smtp-auth-user="$mailfrom" -S smtp-auth-password="$pass_mailfrom" \
 	-S ssl-verify-ignore -S nss-config-dir=/etc/pki/nssdb -S \
-	from=bash_test@mail.ru budakov.web@gmail.com
+	from=$mailfrom $mailto
 }<post
 
 
