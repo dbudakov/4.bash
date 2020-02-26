@@ -1,5 +1,5 @@
 #!/bin/bash
-trap post 1 2 3 6
+trap mail 1 2 3 6
 
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 date0=$(date +%d\ %b\ %G)
@@ -11,7 +11,8 @@ file=access.log
  	ip_select() {
 		awk -v t=$t '/'$t'/ {print $1}' $file 2>/dev/null|
 		sort|uniq -c|
-		sort -nr
+		sort -nr|
+		head -20
 	}
 	adr() {
 		ip_select|
@@ -23,6 +24,7 @@ file=access.log
 		awk -F\" '/https/ BEGIN{print "Requests:\ttarget_addresses"}{print $4}'|
 		sort|uniq -c|
 		sort -nr|
+		head -20|
 		column -t
 	}
 
@@ -34,7 +36,7 @@ file=access.log
 	}
 	err() {
 	awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null|
-	egrep '^4|^5
+	egrep "^4|^5"
 	}
 
 	post(){
@@ -47,3 +49,4 @@ mail() {
 	-S ssl-verify-ignore -S nss-config-dir=/etc/pki/nssdb -S \
 	from=bash_test@mail.ru budakov.web@gmail.com
 }<post
+mail
