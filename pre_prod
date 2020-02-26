@@ -56,7 +56,7 @@ main() {
 	if
 	[ -e $temp ]
 	then echo "script running"
-	else touch $temp && mail && rm $temp
+	else touch $temp && mail && rm -f $temp
 	fi
 	}
 main
