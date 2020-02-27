@@ -17,7 +17,7 @@ crontab -e
 0 * * * * /bin/bash /root/script1  
 ```
 сам скрипт:
-```
+```shell
 #!/bin/bash
 #trap ml 1 2 3 6
 
