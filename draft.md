@@ -1,4 +1,16 @@
 ### bash  
+apropos, type, pack/path - more help
+source - start program
+шибанг = шапка скрипта
+IFS - некий разделитель
+set -x в скрипте покажет все команды, нужно при отладке
+$-  текущее состояние set
+/proc/self/fd
+/proc/self/fdinfo
+exec
+trap 2:20
+
+
 Альтернативные оболочки: `zsh fish`    
 вывод справки: `type help man apropos whatis info`    
 `bash -x`   для отладки   
