@@ -1,0 +1,20 @@
+lockfile=/tmp/localfile
+
+ml() {
+  while true
+        do
+                ls -ld $lockfile
+                sleep 3
+        done
+}
+
+if ( set -o noclobber; echo "$$" > "$lockfile") 1> /dev/null;
+
+then
+  trap 'rm -f "$lockfile"; exit $?' INT  TERM EXIT
+  ml
+  rm -f "$lockfile"
+  trap - INT TERM exit
+else
+  echo "program running"
+fi
