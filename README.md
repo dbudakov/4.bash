@@ -16,34 +16,32 @@
 crontab -e
 0 * * * * /bin/bash /root/script1  
 ```
-сам скрипт:
+чистый скрипт лежит [здесь](https://github.com/dbudakov/4.bash/blob/master/script.sh):  
 ```shell
 #!/bin/bash
-#trap ml 1 2 3 6
 
-#time
-t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
-date0=$(date +%d\ %b\ %G)
-date1=$(date --date '-60 min' +%H\:00)
-date2=$(date +%H\:00)
-#file
-temp=/var/temp.log
-file=/root/access.log
-lockfile=/tmp/localfile
-#mail
-mailto=budakov.web@gmail.com
-mailfrom=bash_test@mail.ru
-pass_mailfrom=***
-smtp_serv=smtp.mail.ru:587
+#time параметры времени
+t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))      # вывод актуальной даты и даты час назад, в виде [день] [месяц] [час]
+date0=$(date +%d\ %b\ %G)                                 # текущие дата и время
+date1=$(date --date '-60 min' +%H\:00)                    # дата и время 60 минут назад
+date2=$(date +%H\:00)                                     # вывод только текущего значения [часа] для отчёта
+#file параметры файлов 
+file=/root/access.log                                     # значения файла в котором собирается лог
+lockfile=/tmp/localfile                                   # файл который создается для фикса мультистарта, а также в него падает PID
+#mail параметры почты
+mailto=budakov.web@gmail.com                              # получатель
+mailfrom=bash_test@mail.ru                                # отправитель
+pass_mailfrom=***                                         # пароль отправителя
+smtp_serv=smtp.mail.ru:587                                # smtp сервер для отправки письма
 
 
-ip_select() {
-                awk ' BEGIN {print "Requests:\tAdress:" }{print $1" "$2}'|
-                column -t
+ip_select() {                                                     # данная функция вешает шапку на уже готовый отчёт, а также 
+   awk ' BEGIN {print "Requests:\tAdress:" }{print $1" "$2}'|     # разбивает колонки в таблицу, используется в других функциях
+   column -t
         }
-code_select(){
-                awk 'BEGIN {print "sum:\tcode:"}{print $1" "$2}'|
-                column -t
+code_select(){                                                    # аналогично предыдущей вешает шапку, но уже для кодов возврата
+                awk 'BEGIN {print "sum:\tcode:"}{print $1" "$2}'| # на уже готовый отчёт, а также разбивает колонки в таблицу,
+                column -t                                         # используется в других функциях
         }
 srt() {
         sort|uniq -c|sort -nr
@@ -88,13 +86,9 @@ all(){
         echo -e "$file\n$date0 $date1 - $date2"
         adr;trg;rtn;err
 }
-main() {
-        if
-        [ -e $temp ]
-        then echo "script running"
-        else touch $temp && mail && rm -f $temp
-        fi
-        }
+
+
+
 ml() {
          all|mail -v -s "Test" -S smtp="$smtp_serv" \
         -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="$mailfrom" \
@@ -113,3 +107,13 @@ else
   echo "program running"
 fi
 ```
+```
+temp=/var/temp.log                                      
+main() {
+        if
+        [ -e $temp ]
+        then echo "script running"
+        else touch $temp && mail && rm -f $temp
+        fi
+        }
+```    
