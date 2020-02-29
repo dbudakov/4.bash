@@ -19,13 +19,16 @@ smtp_serv=smtp.mail.ru:587
                 awk ' BEGIN {print "Requests:\tAdress:" }{print $1" "$2}'|
                 column -t
       }
+      
       code_select(){
                 awk 'BEGIN {print "sum:\tcode:"}{print $1" "$2}'|
                 column -t
       }
+      
       srt() {
         sort|uniq -c|sort -nr
       }
+   
    adr() {
                 echo -e "\nadr request"
                 awk -v t=$t '/'$t'/{print $1}' $file 2>/dev/null|
@@ -49,6 +52,7 @@ smtp_serv=smtp.mail.ru:587
                 srt|
                 code_select
    }
+   
    err() {
                 echo -e "\nerror_code:"
                 awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null|
@@ -61,6 +65,7 @@ all(){
         echo -e "$file\n$date0 $date1 - $date2"
         adr;trg;rtn;err
 }
+
 ml() {
          all|mail -v -s "Test" -S smtp="$smtp_serv" \
         -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="$mailfrom" \
@@ -69,14 +74,14 @@ ml() {
 }
 
 if ( set -o noclobber; echo "$$" > "$lockfile") 1> /dev/null;
-then
-  trap 'rm -f "$lockfile"; exit $?' INT  TERM EXIT
-  ml
-  sleep 30
-  rm -f "$lockfile"
-  trap - INT TERM exit
-else
-  echo "program running"
+  then
+    trap 'rm -f "$lockfile"; exit $?' INT  TERM EXIT
+    ml
+    sleep 30
+    rm -f "$lockfile"
+    trap - INT TERM exit
+  else
+   echo "program running"
 fi
 
 ```
