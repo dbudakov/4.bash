@@ -15,47 +15,47 @@ pass_mailfrom=***
 smtp_serv=smtp.mail.ru:587
 
 
-ip_select() {
+      ip_select() {
                 awk ' BEGIN {print "Requests:\tAdress:" }{print $1" "$2}'|
                 column -t
-        }
-code_select(){
+      }
+      code_select(){
                 awk 'BEGIN {print "sum:\tcode:"}{print $1" "$2}'|
                 column -t
-        }
-srt() {
+      }
+      srt() {
         sort|uniq -c|sort -nr
-}
-        adr() {
+      }
+   adr() {
                 echo -e "\nadr request"
                 awk -v t=$t '/'$t'/{print $1}' $file 2>/dev/null|
                 srt|
                 head -20|
                 ip_select
-        }
+   }
 
-        trg() {
+   trg() {
                 echo -e "\ntarget request"
                 awk -v t=$t '/'$t'/ {print $0}' $file 2>/dev/null|
                 awk -F\" '/https/ {print $4}'|
                 srt|
                 head -20|
                 ip_select
-        }
+   }
 
-        rtn(){
+   rtn() {
                 echo -e "\nreturn code:"
                 awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null|
                 srt|
                 code_select
-        }
-        err() {
+   }
+   err() {
                 echo -e "\nerror_code:"
                 awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null|
                 egrep "^4|^5"|
                 srt|
                 code_select
-        }
+   }
 
 all(){
         echo -e "$file\n$date0 $date1 - $date2"
