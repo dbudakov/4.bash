@@ -56,7 +56,7 @@ cstime=$(awk '{print $17}' /proc/2832/stat)
 HZ=$(getconf CLK_TCK)
 a=$(echo "scale=10;($utime+$stime+$cutime+$cstime)/$HZ/6"|bc)
 #вывод минут и секунд
-m=$(echo "$(echo "$(echo "scale=10;$a/10"|bc) - $(echo "$a/10")"|bc)*60"|bc|cut -d. -f 1)
-s=$(echo "$a/10"|bc)
+m=$(echo "$a/10"|bc)
+s=$(echo "$(echo "$(echo "scale=10;$a/10"|bc) - $(echo "$a/10")"|bc)*60"|bc|cut -d. -f 1)
 echo "$m:$s"
 ```
