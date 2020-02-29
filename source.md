@@ -17,7 +17,8 @@
 2.7  [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
 2.8  [stty](https://linux.die.net/man/1/stty)  
 2.9 Регулярные выражения : "Mastering Regular Expressions" by Jeffrey Friedl (O'Reilly, 1997).  
-  sed and awk:  
+ 
+ sed and awk:  
 2.10 Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com)     
 2.11 "UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)   
 2.12 учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)    
