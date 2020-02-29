@@ -8,7 +8,7 @@
 1.7 [trap](https://rtfm.co.ua/bash-ispolzovanie-komandy-trap-dlya-perexvata-signalov-preryvaniya-processa/)  
 
 #### advanced
-2.1  Advanced Bash-Scripting Guide [EN](https://www.opennet.ru/docs/RUS/bash_scripting_guide/) [RUS](https://poplinux.ru/sites/default/files/Advanced-Bash-Scripting-Guide.pdf)   
+2.1  Advanced Bash-Scripting Guide [opennet](https://www.opennet.ru/docs/RUS/bash_scripting_guide/) [poplinux](https://poplinux.ru/sites/default/files/Advanced-Bash-Scripting-Guide.pdf)   
 2.2  [Язык обработки данных AWK](https://www.opennet.ru/docs/RUS/awk/)  
 2.3  [Learning Linux Commands: sed](https://linuxconfig.org/learning-linux-commands-sed)  
 2.4  [Linux man pages](https://linux.die.net/man/)  
