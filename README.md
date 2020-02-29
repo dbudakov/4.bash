@@ -22,31 +22,31 @@ crontab -e
 #!/bin/bash
 
 #time параметры времени
-t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))      # период анализа [минус 60 мин от локального времени]
-date0=$(date +%d\ %b\ %G)                                 # текущие дата и время
-date1=$(date --date '-60 min' +%H\:00)                    # дата и время 60 минут назад
-date2=$(date +%H\:00)                                     # вывод только текущего значения [часа] для отчёта
+t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))# период анализа [минус 60 мин от локального времени]
+date0=$(date +%d\ %b\ %G)                           # текущие дата и время
+date1=$(date --date '-60 min' +%H\:00)              # дата и время 60 минут назад
+date2=$(date +%H\:00)                               # вывод только текущего значения [часа] для отчёта
 #file параметры файлов 
-file=/root/access.log                                     # значения файла в котором собирается лог
-lockfile=/tmp/localfile                                   # файл который создается для фикса мультистарта
+file=/root/access.log                               # значения файла в котором собирается лог
+lockfile=/tmp/localfile                             # файл который создается для фикса мультистарта
 #mail параметры почты
-mailto=budakov.web@gmail.com                              # получатель
-mailfrom=bash_test@mail.ru                                # отправитель
-pass_mailfrom=***                                         # пароль отправителя
-smtp_serv=smtp.mail.ru:587                                # smtp сервер для отправки письма
+mailto=budakov.web@gmail.com                        # получатель
+mailfrom=bash_test@mail.ru                          # отправитель
+pass_mailfrom=***                                   # пароль отправителя
+smtp_serv=smtp.mail.ru:587                          # smtp сервер для отправки письма
 
 
 ip_select() {                                               # используется для оформления, вешает шапку
  awk ' BEGIN {print "Requests:\tAdress:" }{print $1" "$2}'| # на уже готовый отчёт, а также 
  column -t                                                  # разбивает колонки в таблицу
-}
-code_select(){                                     # используется для оформления, вешает шапку, но 
- awk 'BEGIN {print "sum:\tcode:"}{print $1" "$2}'| # уже для кодов возврата на уже готовый отчёт, 
- column -t                                         # а также разбивает колонки в таблицу
- }
+              }
+code_select(){                                      # используется для оформления, вешает шапку, но 
+ awk 'BEGIN {print "sum:\tcode:"}{print $1" "$2}'|  # уже для кодов возврата на уже готовый отчёт, 
+ column -t                                          # а также разбивает колонки в таблицу
+       }
 srt() {                                             # считает уникальные значения строк, а после
         sort|uniq -c|sort -nr                       # сортирует по убыванию суммы
-}                                                    
+       }                                                    
 adr() {                                             # выборка кол-ва ip 
   echo -e "\nadr request"                           # шапка отчёта
   awk -v t=$t '/'$t'/{print $1}' $file 2>/dev/null| # выборка из файла 1-го поля, для строк 
@@ -54,7 +54,6 @@ adr() {                                             # выборка кол-ва
   head -20|                                         # вывод 20 первых строк
   ip_select                                         # вывод на оформление в ip_select()
        }
-
 trg() {                                             # выборка адресов запросов    
  echo -e "\ntarget request"                         # шапка отчёта
  awk -v t=$t '/'$t'/ {print $0}' $file 2>/dev/null| # вывод всей строки содержащей $t
@@ -77,19 +76,10 @@ err() {                                             # вывод кодов ош
  srt|                                               # вывод на srt()  
  code_select                                        # вывод на оформление в code_select     
         }
-
-post(){                                             
- echo -e "$file\n$date0 $date1 - $date2"            # 
- echo -e "$(adr)\n$(trg)\n$(rtn)\n$(err)"           #  
-        }                                           
-
 all(){                                              # формирования общего отчета
         echo -e "$file\n$date0 $date1 - $date2"     # шапка отчета с указанием даты и 
         adr;trg;rtn;err                             # анализируемого промежутка времени,
-}                                                   # а также вывод отчётов
-
-
-
+                                                    # а также вывод отчётов
 ml() {                                              # отправка письма, с вложенной all()
  all|mail -v -s "Test" -S smtp="$smtp_serv" \       # подробнее по отправке в ссылке перед скриптом
  -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="$mailfrom" \
