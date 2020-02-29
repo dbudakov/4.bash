@@ -43,24 +43,24 @@ code_select(){                                     # используется д
  awk 'BEGIN {print "sum:\tcode:"}{print $1" "$2}'| # уже для кодов возврата на уже готовый отчёт, 
  column -t                                         # а также разбивает колонки в таблицу
  }
-srt() {
-        sort|uniq -c|sort -nr
-}
-        adr() {
-                echo -e "\nadr request"
-                awk -v t=$t '/'$t'/{print $1}' $file 2>/dev/null|
-                srt|
-                head -20|
-                ip_select
-        }
+srt() {                                             # считает уникальные значения строк, а после
+        sort|uniq -c|sort -nr                       # сортирует по убыванию суммы
+}                                                    
+adr() {                                             # выборка кол-ва ip 
+  echo -e "\nadr request"                           # шапка отчёта
+  awk -v t=$t '/'$t'/{print $1}' $file 2>/dev/null| # выборка из файла 1 столбца, для строк 
+  srt|                                              # с наличием значения $t , далее srt()
+  head -20|                                         # вывод 20 первых строк
+  ip_select                                         # вывод на оформление в ip_select()
+       }
 
-        trg() {
-                echo -e "\ntarget request"
-                awk -v t=$t '/'$t'/ {print $0}' $file 2>/dev/null|
-                awk -F\" '/https/ {print $4}'|
-                srt|
-                head -20|
-                ip_select
+trg() {                                             # выборка адресов запросов    
+  echo -e "\ntarget request"                        # шапка отчёта
+ awk -v t=$t '/'$t'/ {print $0}' $file 2>/dev/null| # вывод всей строки содержащей $t
+ awk -F\" '/https/ {print $4}'|                     # вывод 4 колонки строр содержищих
+ srt|                                               # значение "https", вывод на srt()
+ head -20|                                          # вывод 20 первых строк
+ ip_select                                          # вывод на оформление в ip_select()   
         }
 
         rtn(){
