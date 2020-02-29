@@ -48,65 +48,65 @@ srt() {                                             # считает уника�
 }                                                    
 adr() {                                             # выборка кол-ва ip 
   echo -e "\nadr request"                           # шапка отчёта
-  awk -v t=$t '/'$t'/{print $1}' $file 2>/dev/null| # выборка из файла 1 столбца, для строк 
+  awk -v t=$t '/'$t'/{print $1}' $file 2>/dev/null| # выборка из файла 1-го поля, для строк 
   srt|                                              # с наличием значения $t , далее srt()
   head -20|                                         # вывод 20 первых строк
   ip_select                                         # вывод на оформление в ip_select()
        }
 
 trg() {                                             # выборка адресов запросов    
-  echo -e "\ntarget request"                        # шапка отчёта
+ echo -e "\ntarget request"                         # шапка отчёта
  awk -v t=$t '/'$t'/ {print $0}' $file 2>/dev/null| # вывод всей строки содержащей $t
- awk -F\" '/https/ {print $4}'|                     # вывод 4 колонки строр содержищих
+ awk -F\" '/https/ {print $4}'|                     # вывод 4 поля для строр содержищих
  srt|                                               # значение "https", вывод на srt()
  head -20|                                          # вывод 20 первых строк
  ip_select                                          # вывод на оформление в ip_select()   
         }
 
-        rtn(){
-                echo -e "\nreturn code:"
-                awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null|
-                srt|
-                code_select
+rtn(){                                              # вывод кодов возврата
+ echo -e "\nreturn code:"                           # шапка отчёта        
+ awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null| # вывод 9 поля для строк содержащих $t
+ srt|                                               # вывод на srt()
+ code_select                                        # вывод на оформление в code_select
         }
-        err() {
-                echo -e "\nerror_code:"
-                awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null|
-                egrep "^4|^5"|
-                srt|
-                code_select
-        }
-
-        post(){
-        echo -e "$file\n$date0 $date1 - $date2"
-        echo -e "$(adr)\n$(trg)\n$(rtn)\n$(err)"
+err() {                                             # вывод кодов ошибок
+ echo -e "\nerror_code:"                            # шапка отчёта
+ awk -v t=$t '/'$t'/ {print $9}' $file 2>/dev/null| # вывод 9 поля для строк содержащих $t
+ egrep "^4|^5"|                                     # выборка значений начинающихся с "4" и "5"   
+ srt|                                               # вывод на srt()  
+ code_select                                        # вывод на оформление в code_select     
         }
 
-all(){
-        echo -e "$file\n$date0 $date1 - $date2"
-        adr;trg;rtn;err
+post(){                                             
+ echo -e "$file\n$date0 $date1 - $date2"            # 
+ echo -e "$(adr)\n$(trg)\n$(rtn)\n$(err)"           #  
+        }                                           
+
+all(){                                              # формирования общего отчета
+        echo -e "$file\n$date0 $date1 - $date2"     # шапка отчета с указанием даты и 
+        adr;trg;rtn;err                             # анализируемого промежутка времени,
+}                                                   # а также вывод отчётов
+
+
+
+ml() {                                              # отправка письма, с вложенной all()
+ all|mail -v -s "Test" -S smtp="$smtp_serv" \       # подробнее по отправке в ссылке перед скриптом
+ -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="$mailfrom" \
+ -S smtp-auth-password="$pass_mailfrom" -S ssl-verify-ignore \
+ -S nss-config-dir=/etc/pki/nssdb -S from=$mailfrom $mailto
 }
 
-
-
-ml() {
-         all|mail -v -s "Test" -S smtp="$smtp_serv" \
-        -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="$mailfrom" \
-        -S smtp-auth-password="$pass_mailfrom" -S ssl-verify-ignore \
-        -S nss-config-dir=/etc/pki/nssdb -S from=$mailfrom $mailto
-}
-
-if ( set -o noclobber; echo "$$" > "$lockfile") 1> /dev/null;
-then
-  trap 'rm -f "$lockfile"; exit $?' INT  TERM EXIT
-  ml
-  sleep 30
-  rm -f "$lockfile"
-  trap - INT TERM exit
-else
-  echo "program running"
-fi
-```
+if ( set -o noclobber; echo "$$" > "$lockfile") 1> /dev/null; 
+then                                                # активная часть скрипта, выставляется трап
+  trap 'rm -f "$lockfile"; exit $?' INT  TERM EXIT  # nocloobber - параметр о запрете записи файла
+  ml                                                # поэтому если файл есть то перезапись неполучится
+  sleep 30                                          # ставится условие, если запись не удалась вывести сообщение о 
+  rm -f "$lockfile"                                 # том что скрипт запущен, если удалась, то запустить ml(), 
+  trap - INT TERM exit                              # обозначен таймер на 30сек для проверки мульти старта,  
+else                                                # трап перехватывает сигналы INT(^C) TERM(15,kill) 
+  echo "program running"                            # EXIT(выходной сигнал), по этому сигналу происходит удаление
+fi                                                  # lockfile'a, закрытия оператора условия "if"
+```     
 ```
 temp=/var/temp.log                                      
 main() {
