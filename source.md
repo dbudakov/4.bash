@@ -17,24 +17,27 @@
 2.7  [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
 2.8  [stty](https://linux.die.net/man/1/stty)  
 2.9 Регулярные выражения : "Mastering Regular Expressions" by Jeffrey Friedl (O'Reilly, 1997).  
+  sed and awk:  
+2.10 Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com)     
+2.11 "UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)   
+2.12 учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)    
 
 #### SED
 sed begginer:  
-1.7  [sed example_1](http://www.lissyara.su/doc/programming/sed/)  
-1.2  [sed example_2](http://ant0.ru/sed1line.html)  
+1.  [sed example_1](http://www.lissyara.su/doc/programming/sed/)  
+2.  [sed example_2](http://ant0.ru/sed1line.html)  
+
 sed advance:  
-2.9  [seb edit interfaces](http://ant0.ru/sed_edit_interfaces.html)  
-2.9  [sed tutorial](https://www.grymoire.com/Unix/Sed.html)  
-2.10 [sed source](https://web.archive.org/web/20060208161216/http://sed.sourceforge.net/)  
-2.11 [sed example](http://sed.sourceforge.net/sed1line.txt)   
-2.12 [sed cheat sheet](https://catonmat.net/ftp/sed.stream.editor.cheat.sheet.pdf)  
-2.13 sed and awk:  
-Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com)     
-"UNIX Text Processing," by Dale Dougherty и Tim O'Reilly (Hayden Books, 1987)   
-или учебники Mike Arst distributed in U-SEDIT2.ZIP (many sites)  
+1. [seb edit interfaces](http://ant0.ru/sed_edit_interfaces.html)  
+2. [sed tutorial](https://www.grymoire.com/Unix/Sed.html)  
+3. [sed source](https://web.archive.org/web/20060208161216/http://sed.sourceforge.net/)  
+4. [sed example](http://sed.sourceforge.net/sed1line.txt)   
+5. [sed cheat sheet](https://catonmat.net/ftp/sed.stream.editor.cheat.sheet.pdf)  
+
 #### AWK  
 1. [awk habr](https://habr.com/ru/company/ruvds/blog/327754/) 
 2. [awk manual](https://www.gnu.org/software/gawk/manual/html_node/index.html)  
 3. [Awk в примерах](https://www.ibm.com/developerworks/ru/library/l-awk1/index.html)  
+
 #### other  
-3.1 [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
+1. [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
