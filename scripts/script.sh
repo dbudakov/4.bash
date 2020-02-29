@@ -1,6 +1,5 @@
 #!/bin/bash
-#trap ml 1 2 3 6
-
+ 
 #time
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 date0=$(date +%d\ %b\ %G)
@@ -8,7 +7,6 @@ date1=$(date --date '-60 min' +%H\:00)
 date2=$(date +%H\:00)
 #file
 temp=/var/temp.log
-file=/root/access.log
 lockfile=/tmp/localfile
 #mail
 mailto=budakov.web@gmail.com
@@ -59,22 +57,10 @@ srt() {
                 code_select
         }
 
-        post(){
-        echo -e "$file\n$date0 $date1 - $date2"
-        echo -e "$(adr)\n$(trg)\n$(rtn)\n$(err)"
-        }
-
 all(){
         echo -e "$file\n$date0 $date1 - $date2"
         adr;trg;rtn;err
 }
-main() {
-        if
-        [ -e $temp ]
-        then echo "script running"
-        else touch $temp && mail && rm -f $temp
-        fi
-        }
 ml() {
          all|mail -v -s "Test" -S smtp="$smtp_serv" \
         -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="$mailfrom" \
@@ -92,3 +78,18 @@ then
 else
   echo "program running"
 fi
+
+```
+file=/root/access.log
+        post(){
+        echo -e "$file\n$date0 $date1 - $date2"
+        echo -e "$(adr)\n$(trg)\n$(rtn)\n$(err)"
+        }
+        main() {
+        if
+        [ -e $temp ]
+        then echo "script running"
+        else touch $temp && mail && rm -f $temp
+        fi
+        }
+```       
