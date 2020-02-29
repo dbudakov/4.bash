@@ -16,7 +16,7 @@
 crontab -e
 0 * * * * /bin/bash /root/script1  
 ```
-чистый скрипт лежит [здесь](https://github.com/dbudakov/4.bash/blob/master/script.sh)      
+чистый скрипт лежит [здесь](https://github.com/dbudakov/4.bash/blob/master/scripts/script.sh)      
 настройка email [здесь](https://github.com/dbudakov/4.bash/blob/master/mail.md)  
 ```shell
 #!/bin/bash
