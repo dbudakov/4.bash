@@ -27,7 +27,7 @@ date1=$(date --date '-60 min' +%H\:00)                    # дата и врем
 date2=$(date +%H\:00)                                     # вывод только текущего значения [часа] для отчёта
 #file параметры файлов 
 file=/root/access.log                                     # значения файла в котором собирается лог
-lockfile=/tmp/localfile                                   # файл который создается для фикса мультистарта, а также в него падает PID
+lockfile=/tmp/localfile                                   # файл который создается для фикса мультистарта
 #mail параметры почты
 mailto=budakov.web@gmail.com                              # получатель
 mailfrom=bash_test@mail.ru                                # отправитель
