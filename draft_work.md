@@ -47,3 +47,16 @@ awk -v t=$t '/'$t'/ {print $0}' access.log 2>/dev/null| awk  '{print  $9}'|sort|
 awk -v t=$t '/'$t'/ {print $9}' access.log 2>/dev/null|egrep '^4|^5
 ```
 
+```вывод времени в секундах
+#!/bin/bash
+utime=$(awk '{print $14}' /proc/2832/stat)
+stime=$(awk '{print $15}' /proc/2832/stat)
+cutime=$(awk '{print $16}' /proc/2832/stat)
+cstime=$(awk '{print $17}' /proc/2832/stat)
+HZ=$(getconf CLK_TCK)
+a=$(echo "scale=10;($utime+$stime+$cutime+$cstime)/$HZ/6"|bc)
+#вывод минут и секунд
+m=$(echo "$(echo "$(echo "scale=10;$a/10"|bc) - $(echo "$a/10")"|bc)*60"|bc|cut -d. -f 1)
+s=$(echo "$a/10"|bc)
+echo "$m:$s"
+```
