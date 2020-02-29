@@ -17,7 +17,7 @@ crontab -e
 0 * * * * /bin/bash /root/script1  
 ```
 чистый скрипт лежит [здесь](https://github.com/dbudakov/4.bash/blob/master/script.sh)      
-настройка отправки и параметров email [здесь](https://github.com/dbudakov/4.bash/blob/master/mail.md)  
+настройка email [здесь](https://github.com/dbudakov/4.bash/blob/master/mail.md)  
 ```shell
 #!/bin/bash
 
