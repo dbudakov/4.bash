@@ -5,7 +5,8 @@
 1.4 [Карманный справочник](https://slack-files.com/files-pri-safe/T73A2HU1L-FTEKZQ882/bash_____________________________________________________________.pdf?c=1582268809-f7a8d24379df527139424f9186e778ea4758fa9a)  
 1.5 [bash presentation.otus](https://otus.ru/media-private/bb/be/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_Bash-5373-bbbe25.pdf?hash=ElEps9phUnYcI2rTFQ5SIA&expires=1582295049)  
 1.6 [bash example.otus](https://gitlab.com/otus_linux/stands-05-bash)  
-1.7 [trap](https://rtfm.co.ua/bash-ispolzovanie-komandy-trap-dlya-perexvata-signalov-preryvaniya-processa/)  
+1.7 [trap](https://rtfm.co.ua/bash-ispolzovanie-komandy-trap-dlya-perexvata-signalov-preryvaniya-processa/)
+1.8 [Задачник](https://www.funtoo.org/Bash_by_Example,_Part_1)  
 
 #### advanced
 2.1  Advanced Bash-Scripting Guide [opennet](https://www.opennet.ru/docs/RUS/bash_scripting_guide/) [poplinux](https://poplinux.ru/sites/default/files/Advanced-Bash-Scripting-Guide.pdf)   
@@ -17,6 +18,9 @@
 2.7  [ZSH](https://github.com/ohmyzsh/ohmyzsh)  
 2.8  [stty](https://linux.die.net/man/1/stty)  
 2.9 Регулярные выражения : "Mastering Regular Expressions" by Jeffrey Friedl (O'Reilly, 1997).  
+2.10 [Задачник](https://wiki-dev.bash-hackers.org)  
+2.11 [Задачник])(https://www.codewars.com/?language=shell)  
+ 
  
  sed and awk:  
 2.10 Dale Dougherty и Arnold Robbins "sed & awk, 2nd Edition," (O'Reilly, 1997; http://www.ora.com)     
