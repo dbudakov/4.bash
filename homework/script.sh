@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#mail параметры почты 
+mailto=[PLEASE WRITE YOUR MAIL]                        
+mailfrom=bash_test@mail.ru                          
+pass_mailfrom=***                                   
+smtp_serv=smtp.mail.ru:587  
+
 #time параметры времени
 t=$(date +%d\\/%b\\/%G:$(date --date '-60 min' +%H))
 date0=$(date +%d\ %b\ %G)                           
@@ -9,12 +15,6 @@ date2=$(date +%H\:00)
 #file параметры файлов  
 file=../access.log                               
 lockfile=/tmp/localfile                             
-
-#mail параметры почты 
-mailto=[PLEASE WRITE YOUR MAIL]                        
-mailfrom=bash_test@mail.ru                          
-pass_mailfrom=***                                   
-smtp_serv=smtp.mail.ru:587                          
 
 
 ip_select() {                                         
