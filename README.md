@@ -12,7 +12,7 @@
 ### Решение  
 Vagrntfile, access.log, и script находятся [здесь](https://github.com/dbudakov/4.bash/tree/master/homework)  
 настройка email [здесь](https://github.com/dbudakov/4.bash/blob/master/mail.md)  
-
+### script
 настройка cron:  
 ```shell
 crontab -e
