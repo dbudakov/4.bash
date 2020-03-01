@@ -10,14 +10,15 @@
 в письме должно быть прописан обрабатываемый временной диапазон должна быть реализована защита от мультизапуска  
 Критерии оценки: 5 - трапы и функции, а также sed и find +1 балл  
 ### Решение  
+Vagrntfile, access.log, и script находятся [здесь](https://github.com/dbudakov/4.bash/tree/master/homework)  
+настройка email [здесь](https://github.com/dbudakov/4.bash/blob/master/mail.md)  
 
 настройка cron:  
 ```shell
 crontab -e
 0 * * * * /bin/bash /root/script1  
 ```
-чистый скрипт лежит [здесь](https://github.com/dbudakov/4.bash/blob/master/scripts/script.sh)      
-настройка email [здесь](https://github.com/dbudakov/4.bash/blob/master/mail.md)  
+
 ```shell
 #!/bin/bash
 
