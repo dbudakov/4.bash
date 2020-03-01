@@ -79,7 +79,7 @@ err() {                                             # вывод кодов ош
 all(){                                              # формирования общего отчета
         echo -e "$file\n$date0 $date1 - $date2"     # шапка отчета с указанием даты и 
         adr;trg;rtn;err                             # анализируемого промежутка времени,
-                                                    # а также вывод отчётов
+}                                                   # а также вывод отчётов
 ml() {                                              # отправка письма, с вложенной all()
  all|mail -v -s "Test" -S smtp="$smtp_serv" \       # подробнее по отправке в ссылке перед скриптом
  -S smtp-use-starttls -S smtp-auth=login -S smtp-auth-user="$mailfrom" \
