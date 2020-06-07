@@ -3,11 +3,11 @@
 1.2 [Bash-скрипты: начало](https://habr.com/ru/company/ruvds/blog/325522/)  
 1.3 [Bash scripting cheatsheet](https://devhints.io/bash)  
 1.4 [Карманный справочник](https://slack-files.com/files-pri-safe/T73A2HU1L-FTEKZQ882/bash_____________________________________________________________.pdf?c=1582268809-f7a8d24379df527139424f9186e778ea4758fa9a)  
-1.5 [bash presentation.otus](https://otus.ru/media-private/bb/be/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_Bash-5373-bbbe25.pdf?hash=ElEps9phUnYcI2rTFQ5SIA&expires=1582295049)  
-1.6 [bash example.otus](https://gitlab.com/otus_linux/stands-05-bash)  
-1.7 [trap](https://rtfm.co.ua/bash-ispolzovanie-komandy-trap-dlya-perexvata-signalov-preryvaniya-processa/)
-1.8 [Задачник](https://www.funtoo.org/Bash_by_Example,_Part_1) 
-1.9 [Вставка после определённой строки](http://rus-linux.net/nlib.php?name=/MyLDP/consol/HuMan/specific-line-ru.html)  
+1.5 [bash presentation.otus](https://otus.ru/media-private/bb/be/%D0%A2%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_Bash-5373-bbbe25.pdf?hash=ElEps9phUnYcI2rTFQ5SIA&expires=1582295049)    
+1.6 [bash example.otus](https://gitlab.com/otus_linux/stands-05-bash)    
+1.7 [trap](https://rtfm.co.ua/bash-ispolzovanie-komandy-trap-dlya-perexvata-signalov-preryvaniya-processa/)  
+1.8 [Задачник](https://www.funtoo.org/Bash_by_Example,_Part_1)   
+1.9 [Вставка после определённой строки](http://rus-linux.net/nlib.php?name=/MyLDP/consol/HuMan/specific-line-ru.html)   
 
 #### advanced
 2.1  Advanced Bash-Scripting Guide [opennet](https://www.opennet.ru/docs/RUS/bash_scripting_guide/) [poplinux](https://poplinux.ru/sites/default/files/Advanced-Bash-Scripting-Guide.pdf)   
@@ -43,7 +43,8 @@ sed advance:
 #### AWK  
 1. [awk habr](https://habr.com/ru/company/ruvds/blog/327754/) 
 2. [awk manual](https://www.gnu.org/software/gawk/manual/html_node/index.html)  
-3. [Awk в примерах](https://www.ibm.com/developerworks/ru/library/l-awk1/index.html)  
+3. [Awk в примерах](https://www.ibm.com/developerworks/ru/library/l-awk1/index.html)
+4. [язык обработки данных awk](https://m.habr.com/ru/company/ruvds/blog/327754/)    
 
 #### other  
 1. [Script kiddie](https://ru.wikipedia.org/wiki/Скрипт-кидди)
