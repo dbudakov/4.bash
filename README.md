@@ -103,4 +103,5 @@ fi                                                  # lockfile'a, закрыти
 Подстановка переменных в awk  
 ```
 for i in {1..30} ; do cat <file>|awk -v t=$i '{print $t}';done
+uniq -c
 ```
