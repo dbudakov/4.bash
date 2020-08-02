@@ -110,6 +110,8 @@ source.md [hier](https://github.com/dbudakov/4.bash/blob/master/source.md)
 Extracting substring using a regular expression with capture groups [hier](https://markhneedham.com/blog/2013/06/26/unixawk-extracting-substring-using-a-regular-expression-with-capture-groups/)  
 Локальные переменные [здесь](https://www.opennet.ru/docs/RUS/bash_scripting_guide/x12644.html)  
 Отправка почты из консоли [interserver](https://www.interserver.net/tips/kb/linux-mail-command-usage-examples/)  
+Subshell [hier](https://mywiki.wooledge.org/SubShell)  
+pipe -i [hier](https://mywiki.wooledge.org/CommandSubstitution)  
 #### code training
 [Bash by Example](https://www.funtoo.org/Bash_by_Example,_Part_1)  
 [The Bash Hackers Wiki](https://wiki-dev.bash-hackers.org/)  
