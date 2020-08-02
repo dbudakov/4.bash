@@ -106,6 +106,7 @@ for i in {1..30} ; do cat <file>|awk -v t=$i '{print $t}';done
 uniq -c
 ```
 #### source
+source.md [hier](https://github.com/dbudakov/4.bash/blob/master/source.md)  
 Extracting substring using a regular expression with capture groups [hier](https://markhneedham.com/blog/2013/06/26/unixawk-extracting-substring-using-a-regular-expression-with-capture-groups/)  
 Локальные переменные [здесь](https://www.opennet.ru/docs/RUS/bash_scripting_guide/x12644.html)  
 Отправка почты из консоли [interserver](https://www.interserver.net/tips/kb/linux-mail-command-usage-examples/)  
