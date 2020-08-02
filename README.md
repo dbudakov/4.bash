@@ -105,3 +105,7 @@ fi                                                  # lockfile'a, закрыти
 for i in {1..30} ; do cat <file>|awk -v t=$i '{print $t}';done
 uniq -c
 ```
+#### code training
+[Bash by Example](https://www.funtoo.org/Bash_by_Example,_Part_1)  
+[The Bash Hackers Wiki](https://wiki-dev.bash-hackers.org/)  
+[codewars](https://www.codewars.com/?language=shell)
