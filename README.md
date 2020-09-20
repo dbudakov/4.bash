@@ -102,9 +102,26 @@ fi                                                  # lockfile'a, закрыти
 #### Дополнительно:  
 Подстановка переменных в awk  
 ```
-for i in {1..30} ; do cat <file>|awk -v t=$i '{print $t}';done
-uniq -c
+a=5
+echo -e "\n1 2 3\n4 5 6\n7 8 9"|awk '/'$a'/{print $0", var is a="'$a'}'
+
+# также использовалось в решении, нужно углубляться в awk для изучения "-v"
+# for i in {1..30} ; do cat <file>|awk -v t=$i '{print $t}';done
+# uniq -c
 ```
+Выборки из книг
+```
+Условные операторы: case, if, test
+Операторы цикла: for, while, until, select
+
+
+01 SIGHUP   hangup, освобождение линии связи;
+02 SIGINT   interrupt, прерывание;
+03 SIGQUIT  quit, выход;
+15 SIGTERM  terminate, программный сигнал завершения.
+```
+
+
 #### source
 source.md [hier](https://github.com/dbudakov/4.bash/blob/master/source.md) 
 cheatsheet [hier](https://devhints.io/bash#conditionals)  
